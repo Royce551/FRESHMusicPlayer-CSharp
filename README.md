@@ -1,2 +1,2 @@
 # FRESHMusicPlayer-CSharp
-music player
+music player that does stuff
