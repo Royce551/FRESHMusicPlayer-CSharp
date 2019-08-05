@@ -228,11 +228,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(319, 199);
+            this.label5.Location = new System.Drawing.Point(363, 161);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 21);
+            this.label5.Size = new System.Drawing.Size(145, 21);
             this.label5.TabIndex = 33;
-            this.label5.Text = "label5";
+            this.label5.Text = "(nothing playing)";
             // 
             // MainGUI
             // 

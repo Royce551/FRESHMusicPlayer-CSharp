@@ -43,6 +43,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                 playing = false;
                 nowplaying.Text = "Nothing";
                 position = 0;
+                label5.Text = "(nothing playing)";
             }
             catch (System.NullReferenceException)
             {
