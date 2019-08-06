@@ -14,7 +14,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
     
     public partial class MainGUI : Form
     {
-        public string filePath = "";
+        public static string filePath = "";
         public string fileContent = "";
         public bool playing = false;
         public float currentvolume = 1;
@@ -44,6 +44,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                 nowplaying.Text = "Nothing";
                 position = 0;
                 label5.Text = "(nothing playing)";
+                moreinfo.Visible = false;
             }
             catch (System.NullReferenceException)
             {
@@ -75,6 +76,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                 nowplaying.Text = $"{theTrack.Artist} - {theTrack.Title}";
                 outputDevice.Play();
                 outputDevice.Volume = currentvolume;
+                moreinfo.Visible = true;
                 playing = true;
             }
             try 
@@ -185,7 +187,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Button1_Click_1(object sender, EventArgs e)
@@ -240,6 +242,14 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                 label5.Text = $"{formatSongPosition(position)} / {formatSongPosition(theTrack.Duration)}";// thing.ToString();
 
             }
+        }
+        
+        private void Moreinfo_Click(object sender, EventArgs e)
+        {
+            moreinfo mi = new moreinfo();
+            mi.Show();
+            mi.populatelist();
+            
         }
     }
 }

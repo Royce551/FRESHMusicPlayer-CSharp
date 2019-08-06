@@ -48,6 +48,7 @@
             this.nowplaying = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label5 = new System.Windows.Forms.Label();
+            this.moreinfo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -234,12 +235,28 @@
             this.label5.TabIndex = 33;
             this.label5.Text = "(nothing playing)";
             // 
+            // moreinfo
+            // 
+            this.moreinfo.BackColor = System.Drawing.Color.White;
+            this.moreinfo.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.moreinfo.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.moreinfo.Location = new System.Drawing.Point(751, 161);
+            this.moreinfo.Name = "moreinfo";
+            this.moreinfo.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.moreinfo.Size = new System.Drawing.Size(84, 29);
+            this.moreinfo.TabIndex = 34;
+            this.moreinfo.Text = "More...";
+            this.moreinfo.UseVisualStyleBackColor = false;
+            this.moreinfo.Visible = false;
+            this.moreinfo.Click += new System.EventHandler(this.Moreinfo_Click);
+            // 
             // MainGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(851, 487);
+            this.Controls.Add(this.moreinfo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.nowplaying);
             this.Controls.Add(this.label4);
@@ -286,6 +303,7 @@
         private System.Windows.Forms.Label nowplaying;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button moreinfo;
     }
 }
 
