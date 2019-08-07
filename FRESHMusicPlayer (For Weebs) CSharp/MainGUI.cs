@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using NAudio.Wave;
-using ATL.AudioData;
 namespace FRESHMusicPlayer__For_Weebs__CSharp
 {
-    
+
     public partial class MainGUI : Form
     {
         public static string filePath = "";
@@ -166,7 +158,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
             }
         }
 
-        private void TrackBar1_Scroll(object sender, EventArgs e)
+        private void TrackBar1_Scroll(object sender, EventArgs e)           //uwu, is that code i see?
         {
             currentvolume = (float)trackBar1.Value / 100.0f;
             try
@@ -175,7 +167,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
             }
             catch (System.NullReferenceException)
             {
-                // MessageBox.Show("Onee-Chan~! Baka! Why are you changing the volume when there's nothing even playing?!?!", "Volume Slider Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               
                 Console.WriteLine("oop");
             }
         }
@@ -251,5 +243,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
             mi.populatelist();
             
         }
+
+
     }
 }
