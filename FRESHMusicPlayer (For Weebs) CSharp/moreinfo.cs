@@ -26,7 +26,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
             disknumber.Text = "Disc Number - " + theTrack.DiscNumber.ToString();
             bitrate.Text = "Bitrate - " + theTrack.Bitrate.ToString() + "kbps";
         }
-        private void moreinfo_FormClosing(Object sender, FormClosingEventArgs e) => this.Dispose();
+        private void Moreinfo_FormClosing(Object sender, FormClosingEventArgs e) => this.Dispose();
 
     }
 }

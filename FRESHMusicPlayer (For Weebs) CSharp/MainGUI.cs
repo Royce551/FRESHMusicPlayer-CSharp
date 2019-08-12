@@ -18,6 +18,15 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
         {
             InitializeComponent();
             this.Text = "FRESHMusicPlayer (For Weebs) C# Edition";
+            if (Properties.Settings.Default.Image == false)
+            {
+                pictureBox1.Visible = false;
+            }
+            else
+            {
+                pictureBox1.Visible = true;
+            }
+      
         }
 
 
@@ -37,6 +46,8 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                 position = 0;
                 label5.Text = "(nothing playing)";
                 moreinfo.Visible = false;
+                if (Properties.Settings.Default.GC_CollectOnSFinish == true) { GC.Collect(); }
+
             }
             catch (System.NullReferenceException)
             {
@@ -107,6 +118,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
 
             
         }
+        
 
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -177,9 +189,10 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
 
         }
 
-        private void Button5_Click(object sender, EventArgs e)
+        private void Button5_Click(object sender, EventArgs e) //Options button
         {
-
+            Options op = new Options();
+            op.Show();
         }
 
         private void Button1_Click_1(object sender, EventArgs e)
@@ -191,7 +204,9 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                 {
                     filePath = selectFileDialog.FileName;
                     PlayMusic(filePath);
+                    
                 }
+                if (Properties.Settings.Default.GC_CollectOnDClose == true) { GC.Collect(); }
             }
         }
 
