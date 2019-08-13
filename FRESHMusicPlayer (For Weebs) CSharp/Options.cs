@@ -19,7 +19,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
             checkBox1.Checked = Properties.Settings.Default.Image;
             checkBox2.Checked = Properties.Settings.Default.GC_CollectOnSFinish;
             checkBox3.Checked = Properties.Settings.Default.GC_CollectOnDClose;
-
+            this.Text = "FRESHMusicPlayer Options";
         }
 
         private void Button1_Click(object sender, EventArgs e)

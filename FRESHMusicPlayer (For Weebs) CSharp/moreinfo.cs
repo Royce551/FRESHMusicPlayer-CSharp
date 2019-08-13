@@ -15,6 +15,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
         public moreinfo()
         {
             InitializeComponent();
+            this.Text = "About this song";
         }
         public void populatelist()
         {
