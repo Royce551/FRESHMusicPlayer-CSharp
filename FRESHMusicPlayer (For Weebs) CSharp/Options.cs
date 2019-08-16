@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FRESHMusicPlayer__For_Weebs__CSharp
@@ -19,7 +12,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
             checkBox1.Checked = Properties.Settings.Default.Image;
             checkBox2.Checked = Properties.Settings.Default.GC_CollectOnSFinish;
             checkBox3.Checked = Properties.Settings.Default.GC_CollectOnDClose;
-            this.Text = "FRESHMusicPlayer Options";
+            Text = "FRESHMusicPlayer Options";
         }
 
         private void Button1_Click(object sender, EventArgs e)

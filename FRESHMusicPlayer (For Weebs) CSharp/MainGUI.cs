@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Drawing;
 using NAudio.Wave;
 namespace FRESHMusicPlayer__For_Weebs__CSharp
 {
@@ -184,11 +185,6 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
             }
         }
 
-        private void ToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Button5_Click(object sender, EventArgs e) //Options button
         {
             Options op = new Options();
@@ -259,6 +255,20 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
             
         }
 
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+            using (var selectFileDialog = new OpenFileDialog())
 
+            {
+                if (selectFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    var newimage = selectFileDialog.FileName;
+                    pictureBox1.Image.Dispose();
+                    pictureBox1.Image = Image.FromFile(newimage);
+
+                }
+                if (Properties.Settings.Default.GC_CollectOnDClose == true) { GC.Collect(); }
+            }
+        }
     }
 }

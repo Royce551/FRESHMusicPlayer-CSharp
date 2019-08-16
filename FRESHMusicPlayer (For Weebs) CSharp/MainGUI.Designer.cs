@@ -49,6 +49,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.moreinfo = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -76,6 +77,7 @@
             // 
             // button2
             // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Location = new System.Drawing.Point(390, 102);
             this.button2.Margin = new System.Windows.Forms.Padding(5);
             this.button2.Name = "button2";
@@ -106,6 +108,7 @@
             // 
             // button3
             // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Location = new System.Drawing.Point(0, 102);
             this.button3.Margin = new System.Windows.Forms.Padding(5);
             this.button3.Name = "button3";
@@ -117,6 +120,7 @@
             // 
             // button4
             // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Location = new System.Drawing.Point(181, 102);
             this.button4.Margin = new System.Windows.Forms.Padding(5);
             this.button4.Name = "button4";
@@ -128,6 +132,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(12, 129);
             this.pictureBox1.Name = "pictureBox1";
@@ -135,6 +140,8 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox1, "Click here to change your waifu!");
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // label2
             // 
@@ -147,6 +154,7 @@
             // 
             // trackBar1
             // 
+            this.trackBar1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.trackBar1.LargeChange = 10;
             this.trackBar1.Location = new System.Drawing.Point(0, 49);
             this.trackBar1.Maximum = 100;
@@ -158,6 +166,7 @@
             // 
             // button5
             // 
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.Location = new System.Drawing.Point(0, 163);
             this.button5.Margin = new System.Windows.Forms.Padding(5);
             this.button5.Name = "button5";
@@ -178,6 +187,7 @@
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Location = new System.Drawing.Point(319, 74);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 34);
@@ -238,6 +248,7 @@
             // moreinfo
             // 
             this.moreinfo.BackColor = System.Drawing.Color.White;
+            this.moreinfo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.moreinfo.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.moreinfo.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.moreinfo.Location = new System.Drawing.Point(751, 161);
@@ -304,6 +315,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button moreinfo;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
