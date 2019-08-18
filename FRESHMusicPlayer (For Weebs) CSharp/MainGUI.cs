@@ -18,7 +18,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
         public MainGUI()
         {
             InitializeComponent();
-            this.Text = "FRESHMusicPlayer (For Weebs) C# Edition";
+            Text = "FRESHMusicPlayer (For Weebs) C# Edition";
             if (Properties.Settings.Default.Image == false)
             {
                 pictureBox1.Visible = false;
