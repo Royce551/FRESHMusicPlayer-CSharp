@@ -47,6 +47,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                 position = 0;
                 label5.Text = "(nothing playing)";
                 moreinfo.Visible = false;
+                Text = "FRESHMusicPlayer (For Weebs) C# Edition";
                 if (Properties.Settings.Default.GC_CollectOnSFinish == true) { GC.Collect(); }
 
             }
@@ -78,6 +79,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                     
                 }
                 nowplaying.Text = $"{theTrack.Artist} - {theTrack.Title}";
+                Text = $"{theTrack.Artist} - {theTrack.Title} | FRESHMusicPlayer";
                 outputDevice.Play();
                 outputDevice.Volume = currentvolume;
                 moreinfo.Visible = true;
