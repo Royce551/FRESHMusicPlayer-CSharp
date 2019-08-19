@@ -176,15 +176,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
         private void TrackBar1_Scroll(object sender, EventArgs e)           //uwu, is that code i see?
         {
             currentvolume = (float)trackBar1.Value / 100.0f;
-            try
-            {
-                outputDevice.Volume = currentvolume;
-            }
-            catch (System.NullReferenceException)
-            {
-               
-                Console.WriteLine("oop");
-            }
+            if (playing) outputDevice.Volume = currentvolume;
         }
 
         private void Button5_Click(object sender, EventArgs e) //Options button
