@@ -182,7 +182,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
         private void Button5_Click(object sender, EventArgs e) //Options button
         {
             Options op = new Options();
-            op.Show();
+            op.ShowDialog();
         }
 
         private void Button1_Click_1(object sender, EventArgs e)
@@ -244,7 +244,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
         private void Moreinfo_Click(object sender, EventArgs e)
         {
             moreinfo mi = new moreinfo();
-            mi.Show();
+            mi.ShowDialog();
             mi.populatelist();
             
         }
