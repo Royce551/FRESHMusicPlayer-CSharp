@@ -244,8 +244,9 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
         private void Moreinfo_Click(object sender, EventArgs e)
         {
             moreinfo mi = new moreinfo();
-            mi.Show();
             mi.populatelist();
+            mi.ShowDialog();
+            
             
         }
 
