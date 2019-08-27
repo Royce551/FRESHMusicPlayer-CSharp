@@ -38,6 +38,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.albumbox = new System.Windows.Forms.TextBox();
+            this.genrebox = new System.Windows.Forms.TextBox();
+            this.yearbox = new System.Windows.Forms.TextBox();
+            this.trackbox = new System.Windows.Forms.TextBox();
+            this.diskbox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -116,6 +122,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.yearbox);
+            this.groupBox1.Controls.Add(this.genrebox);
+            this.groupBox1.Controls.Add(this.albumbox);
             this.groupBox1.Controls.Add(this.album);
             this.groupBox1.Controls.Add(this.genre);
             this.groupBox1.Controls.Add(this.year);
@@ -128,6 +137,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.diskbox);
+            this.groupBox2.Controls.Add(this.trackbox);
             this.groupBox2.Controls.Add(this.tracknumber);
             this.groupBox2.Controls.Add(this.disknumber);
             this.groupBox2.Location = new System.Drawing.Point(23, 157);
@@ -147,11 +158,67 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Technical Info";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(397, 305);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 36);
+            this.button1.TabIndex = 43;
+            this.button1.Text = "Edit Metadata";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // albumbox
+            // 
+            this.albumbox.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.albumbox.Location = new System.Drawing.Point(85, 24);
+            this.albumbox.Name = "albumbox";
+            this.albumbox.Size = new System.Drawing.Size(410, 22);
+            this.albumbox.TabIndex = 39;
+            this.albumbox.Visible = false;
+            // 
+            // genrebox
+            // 
+            this.genrebox.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genrebox.Location = new System.Drawing.Point(85, 45);
+            this.genrebox.Name = "genrebox";
+            this.genrebox.Size = new System.Drawing.Size(410, 22);
+            this.genrebox.TabIndex = 40;
+            this.genrebox.Visible = false;
+            // 
+            // yearbox
+            // 
+            this.yearbox.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.yearbox.Location = new System.Drawing.Point(143, 67);
+            this.yearbox.Name = "yearbox";
+            this.yearbox.Size = new System.Drawing.Size(352, 22);
+            this.yearbox.TabIndex = 41;
+            this.yearbox.Visible = false;
+            // 
+            // trackbox
+            // 
+            this.trackbox.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.trackbox.Location = new System.Drawing.Point(143, 24);
+            this.trackbox.Name = "trackbox";
+            this.trackbox.Size = new System.Drawing.Size(352, 22);
+            this.trackbox.TabIndex = 42;
+            this.trackbox.Visible = false;
+            // 
+            // diskbox
+            // 
+            this.diskbox.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.diskbox.Location = new System.Drawing.Point(143, 45);
+            this.diskbox.Name = "diskbox";
+            this.diskbox.Size = new System.Drawing.Size(352, 22);
+            this.diskbox.TabIndex = 43;
+            this.diskbox.Visible = false;
+            // 
             // moreinfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(537, 313);
+            this.ClientSize = new System.Drawing.Size(537, 346);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -183,5 +250,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox yearbox;
+        private System.Windows.Forms.TextBox genrebox;
+        private System.Windows.Forms.TextBox albumbox;
+        private System.Windows.Forms.TextBox diskbox;
+        private System.Windows.Forms.TextBox trackbox;
+        private System.Windows.Forms.Button button1;
     }
 }
