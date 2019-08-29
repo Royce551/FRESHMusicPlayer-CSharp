@@ -252,8 +252,9 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            using (var selectFileDialog = new OpenFileDialog())
-
+            //using (var selectFileDialog = new OpenFileDialog())
+            OpenFileDialog selectFileDialog = new OpenFileDialog();
+            selectFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.tif;...";
             {
                 if (selectFileDialog.ShowDialog() == DialogResult.OK)
                 {
