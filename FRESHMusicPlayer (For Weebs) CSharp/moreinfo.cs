@@ -6,14 +6,16 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
     public partial class moreinfo : Form
     {
         bool editmode = false;
+        ATL.Track theTrack = new ATL.Track(MainGUI.filePath);
         public moreinfo()
         {
             InitializeComponent();
             this.Text = "About this song";
+            
         }
         public void populatelist()
         {
-            ATL.Track theTrack = new ATL.Track(MainGUI.filePath);
+            
             album.Text = "Album - " + theTrack.Album;
             genre.Text = "Genre - " + theTrack.Genre;
             year.Text = "Year Recorded - " + theTrack.Year.ToString();
@@ -39,17 +41,18 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
             {
                 button1.Text = "Edit Metadata";
                 editmode = false;
-                ATL.Track theTrack = new ATL.Track(MainGUI.filePath);
+                
                 albumbox.Visible = false;
                 genrebox.Visible = false;
                 yearbox.Visible = false;
                 trackbox.Visible = false;
                 diskbox.Visible = false;
-                theTrack.Album = albumbox.Text;
-                theTrack.Genre = genrebox.Text;
-                theTrack.Year = Int32.Parse(yearbox.Text);
-                theTrack.TrackNumber = Int32.Parse(trackbox.Text);
-                theTrack.DiscNumber = Int32.Parse(diskbox.Text);
+                theTrack.Album = "testing";
+                theTrack.Genre = "testing";
+                theTrack.Composer = "testing";
+                //theTrack.Year = Int32.Parse(yearbox.Text);
+                //theTrack.TrackNumber = Int32.Parse(trackbox.Text);
+                //theTrack.DiscNumber = Int32.Parse(diskbox.Text);
                 theTrack.Save();
                 
             }
