@@ -63,5 +63,10 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                 Properties.Settings.Default.GC_CollectOnDClose = false;
             }
         }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.WaifuChanged = false;
+        }
     }
 }

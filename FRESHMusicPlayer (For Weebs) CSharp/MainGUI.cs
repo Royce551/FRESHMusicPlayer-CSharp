@@ -17,7 +17,9 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
 
         public MainGUI()
         {
+            
             InitializeComponent();
+            if (Properties.Settings.Default.WaifuChanged) pictureBox1.Image = Image.FromFile(Properties.Settings.Default.Waifu);
             Text = "FRESHMusicPlayer (For Weebs) C# Edition";
             if (Properties.Settings.Default.Image == false)
             {
@@ -27,7 +29,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
             {
                 pictureBox1.Visible = true;
             }
-      
+            
         }
 
 
@@ -56,7 +58,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                 PlayMusic(filePath);
             }
         }
-
+        
         
         public void PlayMusic(string path)
         {
@@ -250,7 +252,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
             
         }
 
-        private void PictureBox1_Click(object sender, EventArgs e)
+        public void PictureBox1_Click(object sender, EventArgs e)
         {
             //using (var selectFileDialog = new OpenFileDialog())
             OpenFileDialog selectFileDialog = new OpenFileDialog();
@@ -259,6 +261,9 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                 if (selectFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     var newimage = selectFileDialog.FileName;
+                    Properties.Settings.Default.Waifu = selectFileDialog.FileName;
+                    Properties.Settings.Default.WaifuChanged = true;
+                    Properties.Settings.Default.Save();
                     pictureBox1.Image.Dispose();
                     pictureBox1.Image = Image.FromFile(newimage);
 
@@ -266,5 +271,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                 if (Properties.Settings.Default.GC_CollectOnDClose == true) { GC.Collect(); }
             }
         }
+        
+        
     }
 }

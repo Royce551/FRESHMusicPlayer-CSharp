@@ -82,5 +82,29 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp.Properties {
                 this["SoundCard"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Waifu {
+            get {
+                return ((string)(this["Waifu"]));
+            }
+            set {
+                this["Waifu"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool WaifuChanged {
+            get {
+                return ((bool)(this["WaifuChanged"]));
+            }
+            set {
+                this["WaifuChanged"] = value;
+            }
+        }
     }
 }
