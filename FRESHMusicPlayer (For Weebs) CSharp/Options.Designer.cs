@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Options));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +76,16 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "General";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(221, 102);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(309, 15);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Want to change the image? Click it on the main window.";
             // 
             // button3
             // 
@@ -220,7 +230,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(196, 21);
             this.label3.TabIndex = 4;
-            this.label3.Text = "FRESHMusicPlayer Ver. 1";
+            this.label3.Text = "FRESHMusicPlayer Ver. 2";
             this.toolTip1.SetToolTip(this.label3, "\r\n");
             // 
             // label7
@@ -240,16 +250,6 @@
             this.label8.Size = new System.Drawing.Size(113, 21);
             this.label8.TabIndex = 6;
             this.label8.Text = "by Squid Grill";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(221, 102);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(309, 15);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Want to change the image? Click it on the main window.";
             // 
             // Options
             // 
