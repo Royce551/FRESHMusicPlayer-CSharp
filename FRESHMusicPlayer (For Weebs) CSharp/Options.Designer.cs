@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Options));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -49,7 +50,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -78,6 +78,19 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "General";
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(6, 51);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(113, 25);
+            this.checkBox4.TabIndex = 6;
+            this.checkBox4.Text = "Dark Mode";
+            this.toolTip1.SetToolTip(this.checkBox4, "Makes everything dark.\r\nUnfortunately does not apply to the dialog boxes :(\r\nThe " +
+        "program must be restarted for the changes to take effect!");
+            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.CheckBox4_CheckedChanged);
             // 
             // label9
             // 
@@ -232,7 +245,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(196, 21);
             this.label3.TabIndex = 4;
-            this.label3.Text = "FRESHMusicPlayer Ver. 2";
+            this.label3.Text = "FRESHMusicPlayer Ver. 3";
             this.toolTip1.SetToolTip(this.label3, "\r\n");
             // 
             // label7
@@ -252,19 +265,6 @@
             this.label8.Size = new System.Drawing.Size(113, 21);
             this.label8.TabIndex = 6;
             this.label8.Text = "by Squid Grill";
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(6, 51);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(113, 25);
-            this.checkBox4.TabIndex = 6;
-            this.checkBox4.Text = "Dark Mode";
-            this.toolTip1.SetToolTip(this.checkBox4, "Makes everything dark.\r\nUnfortunately does not apply to the dialog boxes :(\r\nThe " +
-        "program must be restarted for the changes to take effect!");
-            this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.CheckedChanged += new System.EventHandler(this.CheckBox4_CheckedChanged);
             // 
             // Options
             // 
