@@ -12,6 +12,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
             checkBox1.Checked = Properties.Settings.Default.Image;
             checkBox2.Checked = Properties.Settings.Default.GC_CollectOnSFinish;
             checkBox3.Checked = Properties.Settings.Default.GC_CollectOnDClose;
+            checkBox4.Checked = Properties.Settings.Default.DarkMode;
             Text = "FRESHMusicPlayer Options";
             if (Properties.Settings.Default.DarkMode)
             {
