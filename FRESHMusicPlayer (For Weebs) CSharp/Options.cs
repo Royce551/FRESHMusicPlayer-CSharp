@@ -13,6 +13,11 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
             checkBox2.Checked = Properties.Settings.Default.GC_CollectOnSFinish;
             checkBox3.Checked = Properties.Settings.Default.GC_CollectOnDClose;
             Text = "FRESHMusicPlayer Options";
+            if (Properties.Settings.Default.DarkMode)
+            {
+
+                
+            }
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -67,6 +72,18 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
         private void Button3_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.WaifuChanged = false;
+        }
+
+        private void CheckBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox4.Checked)
+            {
+                Properties.Settings.Default.DarkMode = true;
+            }
+            else
+            {
+                Properties.Settings.Default.DarkMode = false;
+            }
         }
     }
 }

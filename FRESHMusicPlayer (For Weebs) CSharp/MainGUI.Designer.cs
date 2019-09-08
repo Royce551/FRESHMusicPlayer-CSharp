@@ -156,10 +156,10 @@
             // 
             this.trackBar1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.trackBar1.LargeChange = 10;
-            this.trackBar1.Location = new System.Drawing.Point(0, 49);
+            this.trackBar1.Location = new System.Drawing.Point(1, 49);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(589, 45);
+            this.trackBar1.Size = new System.Drawing.Size(588, 45);
             this.trackBar1.TabIndex = 26;
             this.trackBar1.Value = 100;
             this.trackBar1.Scroll += new System.EventHandler(this.TrackBar1_Scroll);
@@ -206,7 +206,7 @@
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Location = new System.Drawing.Point(246, 267);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(606, 208);
+            this.groupBox1.Size = new System.Drawing.Size(593, 208);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Controls";

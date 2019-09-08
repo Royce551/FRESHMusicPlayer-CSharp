@@ -49,6 +49,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +66,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox4);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button1);
@@ -102,7 +104,7 @@
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(56, 65);
+            this.button1.Location = new System.Drawing.Point(51, 82);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(99, 32);
             this.button1.TabIndex = 2;
@@ -114,7 +116,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Enabled = false;
-            this.label2.Location = new System.Drawing.Point(6, 71);
+            this.label2.Location = new System.Drawing.Point(1, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 21);
             this.label2.TabIndex = 1;
@@ -251,6 +253,19 @@
             this.label8.TabIndex = 6;
             this.label8.Text = "by Squid Grill";
             // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(6, 51);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(113, 25);
+            this.checkBox4.TabIndex = 6;
+            this.checkBox4.Text = "Dark Mode";
+            this.toolTip1.SetToolTip(this.checkBox4, "Makes everything dark.\r\nUnfortunately does not apply to the dialog boxes :(\r\nThe " +
+        "program must be restarted for the changes to take effect!");
+            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.CheckBox4_CheckedChanged);
+            // 
             // Options
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -297,5 +312,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.CheckBox checkBox4;
     }
 }
