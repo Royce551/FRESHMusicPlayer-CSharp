@@ -29,7 +29,13 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
             {
                 pictureBox1.Visible = true;
             }
-            
+            if (Properties.Settings.Default.DarkMode)
+            {
+                BackColor = Color.Black;
+                ForeColor = Color.White;
+                button1.ForeColor = Color.Black; button2.ForeColor = Color.Black;button3.ForeColor = Color.Black;button4.ForeColor = Color.Black;button5.ForeColor = Color.Black;
+                groupBox1.ForeColor = Color.White;
+            }
         }
 
 
