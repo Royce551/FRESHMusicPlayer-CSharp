@@ -50,6 +50,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.moreinfo = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.nextbutton = new System.Windows.Forms.Button();
+            this.previoussong = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -78,10 +82,10 @@
             // button2
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Location = new System.Drawing.Point(390, 102);
+            this.button2.Location = new System.Drawing.Point(751, 35);
             this.button2.Margin = new System.Windows.Forms.Padding(5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(199, 104);
+            this.button2.Size = new System.Drawing.Size(84, 29);
             this.button2.TabIndex = 18;
             this.button2.Text = "Play!";
             this.button2.UseVisualStyleBackColor = true;
@@ -92,7 +96,7 @@
             this.textBox1.Location = new System.Drawing.Point(246, 35);
             this.textBox1.Margin = new System.Windows.Forms.Padding(5);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(591, 29);
+            this.textBox1.Size = new System.Drawing.Size(495, 29);
             this.textBox1.TabIndex = 20;
             this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
@@ -198,10 +202,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.previoussong);
+            this.groupBox1.Controls.Add(this.nextbutton);
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.trackBar1);
             this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Location = new System.Drawing.Point(246, 267);
@@ -261,13 +267,55 @@
             this.moreinfo.Visible = false;
             this.moreinfo.Click += new System.EventHandler(this.Moreinfo_Click);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(388, 177);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(199, 29);
+            this.button6.TabIndex = 35;
+            this.button6.Text = "Create Playlist";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(409, 74);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(124, 33);
+            this.button7.TabIndex = 36;
+            this.button7.Text = "Play Playlist...";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.Button7_Click);
+            // 
+            // nextbutton
+            // 
+            this.nextbutton.Location = new System.Drawing.Point(390, 102);
+            this.nextbutton.Name = "nextbutton";
+            this.nextbutton.Size = new System.Drawing.Size(199, 35);
+            this.nextbutton.TabIndex = 36;
+            this.nextbutton.Text = "Next Song";
+            this.nextbutton.UseVisualStyleBackColor = true;
+            this.nextbutton.Click += new System.EventHandler(this.Nextbutton_Click);
+            // 
+            // previoussong
+            // 
+            this.previoussong.Location = new System.Drawing.Point(390, 143);
+            this.previoussong.Name = "previoussong";
+            this.previoussong.Size = new System.Drawing.Size(199, 28);
+            this.previoussong.TabIndex = 37;
+            this.previoussong.Text = "Previous Song";
+            this.previoussong.UseVisualStyleBackColor = true;
+            this.previoussong.Click += new System.EventHandler(this.Previoussong_Click);
+            // 
             // MainGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(851, 487);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.moreinfo);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.nowplaying);
             this.Controls.Add(this.label4);
@@ -316,6 +364,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button moreinfo;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button previoussong;
+        private System.Windows.Forms.Button nextbutton;
     }
 }
 

@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Drawing;
 using NAudio.Wave;
+using ATL.Playlist;
 namespace FRESHMusicPlayer__For_Weebs__CSharp
 {
 
@@ -14,7 +15,9 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
         public int position = 0;
         private WaveOutEvent outputDevice;
         private AudioFileReader audioFile;
-
+        public bool playlistmode = false;
+        public int playsong = 0;
+        System.Collections.Generic.IList<string> playlist = new System.Collections.Generic.List<string>();
         public MainGUI()
         {
             
@@ -57,6 +60,10 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                 moreinfo.Visible = false;
                 Text = "FRESHMusicPlayer (For Weebs) C# Edition";
                 if (Properties.Settings.Default.GC_CollectOnSFinish == true) { GC.Collect(); }
+                if (playlistmode)
+                {
+                    PlayPlaylist();
+                }
 
             }
             catch (System.NullReferenceException)
@@ -162,6 +169,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
         private void Button3_Click(object sender, EventArgs e)
         {
             outputDevice?.Stop();
+            if (playlistmode) playlistmode = false;
             playing = false;
         }
 
@@ -200,6 +208,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
             {
                 if (selectFileDialog.ShowDialog() == DialogResult.OK)
                 {
+                    playlistmode = false;
                     filePath = selectFileDialog.FileName;
                     PlayMusic(filePath);
                     
@@ -248,7 +257,19 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
 
             }
         }
-        
+        public void PlayPlaylist()
+        {
+            if (playsong < playlist.Count)
+            {
+                filePath = playlist[playsong];
+                PlayMusic(playlist[playsong]);
+                playsong += 1;
+            }
+            else
+            {
+                playlistmode = false;
+            }
+        }
         private void Moreinfo_Click(object sender, EventArgs e)
         {
             moreinfo mi = new moreinfo();
@@ -277,7 +298,57 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                 if (Properties.Settings.Default.GC_CollectOnDClose == true) { GC.Collect(); }
             }
         }
-        
-        
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            
+            IPlaylistIO pls = PlaylistIOFactory.GetInstance().GetPlaylistIO("C:\\Users\\poohw\\OneDrive\\Desktop\\stuff on desktop\\playlist.xspf");
+
+            // Option A : Writing file paths
+            System.Collections.Generic.IList<string> pathsToWrite = new System.Collections.Generic.List<string>();
+            pathsToWrite.Add("C:\\Users\\poohw\\OneDrive\\Music\\bgm.mp3");
+            pathsToWrite.Add("C:\\Users\\poohw\\OneDrive\\Music\\headache.mp3");
+            pls.FilePaths = pathsToWrite;
+
+        }
+
+        private void Button7_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog selectFileDialog = new OpenFileDialog();
+            selectFileDialog.Filter = "Playlist Files|*.xspf;*.asx;*.wax;*.wvx;*.b4s;*.m3u;*.m3u8;*.pls;*.smil;*.smi;*.zpl;";
+            {
+                if (selectFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    IPlaylistIO theReader = PlaylistIOFactory.GetInstance().GetPlaylistIO(selectFileDialog.FileName);
+
+                    // Option A : Get file paths
+                    foreach (string s in theReader.FilePaths)
+                    {
+                        playlist.Add(s);
+                    }
+                    playlistmode = true;
+                    PlayPlaylist();
+                }
+                if (Properties.Settings.Default.GC_CollectOnDClose == true) { GC.Collect(); }
+            }
+        }
+
+        private void Nextbutton_Click(object sender, EventArgs e)
+        {
+            if (playlistmode)
+            {
+                playsong += 1;
+                outputDevice?.Stop();
+            }
+        }
+
+        private void Previoussong_Click(object sender, EventArgs e)
+        {
+            if (playlistmode)
+            {
+                playsong -= 3;
+                outputDevice?.Stop();
+            }
+        }
     }
 }
