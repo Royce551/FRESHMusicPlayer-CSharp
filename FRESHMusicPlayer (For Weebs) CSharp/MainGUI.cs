@@ -37,6 +37,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                 BackColor = Color.Black;
                 ForeColor = Color.White;
                 button1.ForeColor = Color.Black; button2.ForeColor = Color.Black;button3.ForeColor = Color.Black;button4.ForeColor = Color.Black;button5.ForeColor = Color.Black;
+                button6.ForeColor = Color.Black; button7.ForeColor = Color.Black;nextbutton.ForeColor = Color.Black; previoussong.ForeColor = Color.Black;
                 groupBox1.ForeColor = Color.White;
             }
         }
@@ -70,6 +71,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
             {
                 PlayMusic(filePath);
             }
+            
         }
         
         
@@ -87,11 +89,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                 {
                     
                     audioFile = new AudioFileReader(path);
-                    outputDevice.Init(audioFile);
-                    
-                    
-                    
-                    
+                    outputDevice.Init(audioFile);                                                                            
                 }
                 nowplaying.Text = $"{theTrack.Artist} - {theTrack.Title}";
                 Text = $"{theTrack.Artist} - {theTrack.Title} | FRESHMusicPlayer";
@@ -325,7 +323,10 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                     foreach (string s in theReader.FilePaths)
                     {
                         playlist.Add(s);
+                        ATL.Track track = new ATL.Track(s);
+                        listBox1.Items.Add($"{track.Artist} - {track.Title}");
                     }
+                    
                     playlistmode = true;
                     PlayPlaylist();
                 }
@@ -349,6 +350,16 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                 playsong -= 3;
                 outputDevice?.Stop();
             }
+        }
+
+        private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            playlistmode = false;
+            playing = true;
+            playsong = listBox1.SelectedIndex;
+            filePath = playlist[playsong];
+            if (playing) PlayMusic(playlist[playsong]);
+
         }
     }
 }
