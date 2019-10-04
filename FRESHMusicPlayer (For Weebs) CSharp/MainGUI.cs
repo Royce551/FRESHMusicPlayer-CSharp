@@ -37,6 +37,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                 BackColor = Color.Black;
                 ForeColor = Color.White;
                 button1.ForeColor = Color.Black; button2.ForeColor = Color.Black;button3.ForeColor = Color.Black;button4.ForeColor = Color.Black;button5.ForeColor = Color.Black;
+                button6.ForeColor = Color.Black;button7.ForeColor = Color.Black;previoussong.ForeColor = Color.Black;nextbutton.ForeColor = Color.Black;button7.ForeColor = Color.Black
                 groupBox1.ForeColor = Color.White;
             }
         }
