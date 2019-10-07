@@ -44,16 +44,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.previoussong = new System.Windows.Forms.Button();
+            this.nextbutton = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.nowplaying = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.moreinfo = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.nextbutton = new System.Windows.Forms.Button();
-            this.previoussong = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -113,10 +113,10 @@
             // button3
             // 
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Location = new System.Drawing.Point(0, 102);
+            this.button3.Location = new System.Drawing.Point(0, 93);
             this.button3.Margin = new System.Windows.Forms.Padding(5);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(174, 43);
+            this.button3.Size = new System.Drawing.Size(174, 32);
             this.button3.TabIndex = 22;
             this.button3.Text = "Stop!";
             this.button3.UseVisualStyleBackColor = true;
@@ -125,10 +125,10 @@
             // button4
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Location = new System.Drawing.Point(181, 102);
+            this.button4.Location = new System.Drawing.Point(181, 93);
             this.button4.Margin = new System.Windows.Forms.Padding(5);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(199, 104);
+            this.button4.Size = new System.Drawing.Size(199, 32);
             this.button4.TabIndex = 23;
             this.button4.Text = "Pause";
             this.button4.UseVisualStyleBackColor = true;
@@ -171,10 +171,10 @@
             // button5
             // 
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Location = new System.Drawing.Point(0, 163);
+            this.button5.Location = new System.Drawing.Point(1, 131);
             this.button5.Margin = new System.Windows.Forms.Padding(5);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(174, 43);
+            this.button5.Size = new System.Drawing.Size(174, 31);
             this.button5.TabIndex = 27;
             this.button5.Text = "Options";
             this.button5.UseVisualStyleBackColor = true;
@@ -210,12 +210,42 @@
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Location = new System.Drawing.Point(246, 267);
+            this.groupBox1.Location = new System.Drawing.Point(247, 325);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(593, 208);
+            this.groupBox1.Size = new System.Drawing.Size(592, 161);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Controls";
+            // 
+            // previoussong
+            // 
+            this.previoussong.Location = new System.Drawing.Point(390, 131);
+            this.previoussong.Name = "previoussong";
+            this.previoussong.Size = new System.Drawing.Size(199, 28);
+            this.previoussong.TabIndex = 37;
+            this.previoussong.Text = "Previous Song";
+            this.previoussong.UseVisualStyleBackColor = true;
+            this.previoussong.Click += new System.EventHandler(this.Previoussong_Click);
+            // 
+            // nextbutton
+            // 
+            this.nextbutton.Location = new System.Drawing.Point(393, 93);
+            this.nextbutton.Name = "nextbutton";
+            this.nextbutton.Size = new System.Drawing.Size(199, 32);
+            this.nextbutton.TabIndex = 36;
+            this.nextbutton.Text = "Next Song";
+            this.nextbutton.UseVisualStyleBackColor = true;
+            this.nextbutton.Click += new System.EventHandler(this.Nextbutton_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(181, 133);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(199, 29);
+            this.button6.TabIndex = 35;
+            this.button6.Text = "Create Playlist";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
             // label4
             // 
@@ -267,16 +297,6 @@
             this.moreinfo.Visible = false;
             this.moreinfo.Click += new System.EventHandler(this.Moreinfo_Click);
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(388, 177);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(199, 29);
-            this.button6.TabIndex = 35;
-            this.button6.Text = "Create Playlist";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.Button6_Click);
-            // 
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(409, 74);
@@ -286,26 +306,6 @@
             this.button7.Text = "Play Playlist...";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.Button7_Click);
-            // 
-            // nextbutton
-            // 
-            this.nextbutton.Location = new System.Drawing.Point(390, 102);
-            this.nextbutton.Name = "nextbutton";
-            this.nextbutton.Size = new System.Drawing.Size(199, 35);
-            this.nextbutton.TabIndex = 36;
-            this.nextbutton.Text = "Next Song";
-            this.nextbutton.UseVisualStyleBackColor = true;
-            this.nextbutton.Click += new System.EventHandler(this.Nextbutton_Click);
-            // 
-            // previoussong
-            // 
-            this.previoussong.Location = new System.Drawing.Point(390, 143);
-            this.previoussong.Name = "previoussong";
-            this.previoussong.Size = new System.Drawing.Size(199, 28);
-            this.previoussong.TabIndex = 37;
-            this.previoussong.Text = "Previous Song";
-            this.previoussong.UseVisualStyleBackColor = true;
-            this.previoussong.Click += new System.EventHandler(this.Previoussong_Click);
             // 
             // MainGUI
             // 
