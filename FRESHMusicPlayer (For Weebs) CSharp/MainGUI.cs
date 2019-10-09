@@ -47,36 +47,53 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
         
         public void StopMusic()
         {
-            
-            try
-            {
-                outputDevice.Dispose();
-                outputDevice = null;
-                audioFile.Dispose();
-                audioFile = null;
-                playing = false;
-                nowplaying.Text = "Nothing";
-                position = 0;
-                label5.Text = "(nothing playing)";
-                moreinfo.Visible = false;
-                Text = "FRESHMusicPlayer (For Weebs) C# Edition";
-                if (Properties.Settings.Default.GC_CollectOnSFinish == true) { GC.Collect(); }
-                if (playlistmode)
+            if (playing)
+                try
                 {
-                    PlayPlaylist();
+                    outputDevice.Dispose();
+                    outputDevice = null;
+                    audioFile?.Dispose();
+                    audioFile = null;
+                    playing = false;
+                    nowplaying.Text = "Nothing";
+                    position = 0;
+                    label5.Text = "(nothing playing)";
+                    moreinfo.Visible = false;
+                    Text = "FRESHMusicPlayer (For Weebs) C# Edition";
+                    
+                    if (playlistmode)
+                    {
+                        //PlayPlaylist();
+                    }
+
+                }
+                catch (System.NullReferenceException)
+                {
+                    //PlayMusic(filePath);
+                    
                 }
 
-            }
-            catch (System.NullReferenceException)
-            {
-                PlayMusic(filePath);
-            }
-            
+
+                catch (NAudio.MmException)
+                {
+                    Console.WriteLine("Things are breaking!");
+                    Console.WriteLine(filePath);
+                    //MessageBox.Show("ok", "Format Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    outputDevice = new WaveOutEvent();
+                    outputDevice.PlaybackStopped += OnPlaybackStopped; // Does the same initiallisation PlayMusic() does.
+                    audioFile = new AudioFileReader(filePath);
+                    outputDevice.Init(audioFile);
+                    PlayMusic(filePath);
+                }
+            else PlayMusic(filePath);
         }
         
         
         public void PlayMusic(string path)
         {
+            Console.WriteLine($"Playing {filePath}");
+            Console.WriteLine($"Playsong - {playsong.ToString()}");
+            Console.WriteLine($"Selected Index - {listBox1.SelectedIndex.ToString()}");
             void PMusic()
             {
                 ATL.Track theTrack = new ATL.Track(filePath);
@@ -354,11 +371,11 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
 
         private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            playlistmode = false;
-            playing = true;
+            playlistmode = true;
+            //playing = true;
             playsong = listBox1.SelectedIndex;
-            filePath = playlist[playsong];
-            if (playing) PlayMusic(playlist[playsong]);
+            //filePath = playlist[playsong];
+            PlayPlaylist();
 
         }
     }
