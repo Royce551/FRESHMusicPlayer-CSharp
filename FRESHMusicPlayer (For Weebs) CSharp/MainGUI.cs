@@ -79,6 +79,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                     Console.WriteLine("Things are breaking!");
                     Console.WriteLine(filePath);
                     //MessageBox.Show("ok", "Format Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    outputDevice?.Dispose()
                     outputDevice = new WaveOutEvent();
                     outputDevice.PlaybackStopped += OnPlaybackStopped; // Does the same initiallisation PlayMusic() does.
                     audioFile = new AudioFileReader(filePath);
