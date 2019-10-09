@@ -37,7 +37,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                 BackColor = Color.Black;
                 ForeColor = Color.White;
                 button1.ForeColor = Color.Black; button2.ForeColor = Color.Black;button3.ForeColor = Color.Black;button4.ForeColor = Color.Black;button5.ForeColor = Color.Black;
-                button6.ForeColor = Color.Black;button7.ForeColor = Color.Black;previoussong.ForeColor = Color.Black;nextbutton.ForeColor = Color.Black;button7.ForeColor = Color.Black;
+                button6.ForeColor = Color.Black; button7.ForeColor = Color.Black;nextbutton.ForeColor = Color.Black; previoussong.ForeColor = Color.Black;
                 groupBox1.ForeColor = Color.White;
             }
         }
@@ -47,35 +47,53 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
         
         public void StopMusic()
         {
-            
-            try
-            {
-                outputDevice.Dispose();
-                outputDevice = null;
-                audioFile.Dispose();
-                audioFile = null;
-                playing = false;
-                nowplaying.Text = "Nothing";
-                position = 0;
-                label5.Text = "(nothing playing)";
-                moreinfo.Visible = false;
-                Text = "FRESHMusicPlayer (For Weebs) C# Edition";
-                if (Properties.Settings.Default.GC_CollectOnSFinish == true) { GC.Collect(); }
-                if (playlistmode)
+            if (playing)
+                try
                 {
-                    PlayPlaylist();
+                    outputDevice.Dispose();
+                    outputDevice = null;
+                    audioFile?.Dispose();
+                    audioFile = null;
+                    playing = false;
+                    nowplaying.Text = "Nothing";
+                    position = 0;
+                    label5.Text = "(nothing playing)";
+                    moreinfo.Visible = false;
+                    Text = "FRESHMusicPlayer (For Weebs) C# Edition";
+                    
+                    if (playlistmode)
+                    {
+                        //PlayPlaylist();
+                    }
+
+                }
+                catch (System.NullReferenceException)
+                {
+                    //PlayMusic(filePath);
+                    
                 }
 
-            }
-            catch (System.NullReferenceException)
-            {
-                PlayMusic(filePath);
-            }
+
+                catch (NAudio.MmException)
+                {
+                    Console.WriteLine("Things are breaking!");
+                    Console.WriteLine(filePath);
+                    //MessageBox.Show("ok", "Format Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    outputDevice = new WaveOutEvent();
+                    outputDevice.PlaybackStopped += OnPlaybackStopped; // Does the same initiallisation PlayMusic() does.
+                    audioFile = new AudioFileReader(filePath);
+                    outputDevice.Init(audioFile);
+                    PlayMusic(filePath);
+                }
+            else PlayMusic(filePath);
         }
         
         
         public void PlayMusic(string path)
         {
+            Console.WriteLine($"Playing {filePath}");
+            Console.WriteLine($"Playsong - {playsong.ToString()}");
+            Console.WriteLine($"Selected Index - {listBox1.SelectedIndex.ToString()}");
             void PMusic()
             {
                 ATL.Track theTrack = new ATL.Track(filePath);
@@ -88,11 +106,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                 {
                     
                     audioFile = new AudioFileReader(path);
-                    outputDevice.Init(audioFile);
-                    
-                    
-                    
-                    
+                    outputDevice.Init(audioFile);                                                                            
                 }
                 nowplaying.Text = $"{theTrack.Artist} - {theTrack.Title}";
                 Text = $"{theTrack.Artist} - {theTrack.Title} | FRESHMusicPlayer";
@@ -326,7 +340,10 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                     foreach (string s in theReader.FilePaths)
                     {
                         playlist.Add(s);
+                        ATL.Track track = new ATL.Track(s);
+                        listBox1.Items.Add($"{track.Artist} - {track.Title}");
                     }
+                    
                     playlistmode = true;
                     PlayPlaylist();
                 }
@@ -350,6 +367,16 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                 playsong -= 3;
                 outputDevice?.Stop();
             }
+        }
+
+        private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            playlistmode = true;
+            //playing = true;
+            playsong = listBox1.SelectedIndex;
+            //filePath = playlist[playsong];
+            PlayPlaylist();
+
         }
     }
 }
