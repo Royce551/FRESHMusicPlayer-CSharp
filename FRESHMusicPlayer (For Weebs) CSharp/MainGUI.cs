@@ -5,7 +5,7 @@ using NAudio.Wave;
 using ATL.Playlist;
 namespace FRESHMusicPlayer__For_Weebs__CSharp
 {
-
+    
     public partial class MainGUI : Form
     {
         public static string filePath = "";
@@ -41,7 +41,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                 groupBox1.ForeColor = Color.White;
             }
         }
-
+         
 
         private void OnPlaybackStopped(object sender, StoppedEventArgs args) => StopMusic();
         
