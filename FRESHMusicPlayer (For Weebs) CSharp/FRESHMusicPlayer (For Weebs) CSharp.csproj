@@ -4,7 +4,7 @@
     <RootNamespace>FRESHMusicPlayer__For_Weebs__CSharp</RootNamespace>
     <AssemblyName>FRESHMusicPlayer %28For Weebs%29 CSharp</AssemblyName>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
