@@ -114,10 +114,10 @@
             // button3
             // 
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Location = new System.Drawing.Point(0, 141);
+            this.button3.Location = new System.Drawing.Point(0, 181);
             this.button3.Margin = new System.Windows.Forms.Padding(5);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(32, 43);
+            this.button3.Size = new System.Drawing.Size(84, 29);
             this.button3.TabIndex = 22;
             this.button3.Text = "Stop!";
             this.button3.UseVisualStyleBackColor = true;
@@ -126,10 +126,10 @@
             // button4
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Location = new System.Drawing.Point(0, 194);
+            this.button4.Location = new System.Drawing.Point(0, 220);
             this.button4.Margin = new System.Windows.Forms.Padding(5);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(32, 41);
+            this.button4.Size = new System.Drawing.Size(84, 29);
             this.button4.TabIndex = 23;
             this.button4.Text = "Pause";
             this.button4.UseVisualStyleBackColor = true;
@@ -161,22 +161,23 @@
             // 
             this.trackBar1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.trackBar1.LargeChange = 10;
-            this.trackBar1.Location = new System.Drawing.Point(38, 8);
+            this.trackBar1.Location = new System.Drawing.Point(77, 32);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar1.Size = new System.Drawing.Size(45, 393);
+            this.trackBar1.Size = new System.Drawing.Size(45, 363);
             this.trackBar1.TabIndex = 26;
+            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.trackBar1.Value = 100;
             this.trackBar1.Scroll += new System.EventHandler(this.TrackBar1_Scroll);
             // 
             // button5
             // 
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Location = new System.Drawing.Point(-1, 355);
+            this.button5.Location = new System.Drawing.Point(-1, 364);
             this.button5.Margin = new System.Windows.Forms.Padding(5);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(27, 43);
+            this.button5.Size = new System.Drawing.Size(85, 29);
             this.button5.TabIndex = 27;
             this.button5.Text = "Options";
             this.button5.UseVisualStyleBackColor = true;
@@ -204,26 +205,26 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.previoussong);
             this.groupBox1.Controls.Add(this.nextbutton);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.trackBar1);
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Location = new System.Drawing.Point(733, 74);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(106, 401);
+            this.groupBox1.Size = new System.Drawing.Size(122, 401);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Controls";
             // 
             // previoussong
             // 
-            this.previoussong.Location = new System.Drawing.Point(0, 243);
+            this.previoussong.Location = new System.Drawing.Point(0, 257);
             this.previoussong.Name = "previoussong";
-            this.previoussong.Size = new System.Drawing.Size(28, 28);
+            this.previoussong.Size = new System.Drawing.Size(84, 29);
             this.previoussong.TabIndex = 37;
             this.previoussong.Text = "Previous Song";
             this.previoussong.UseVisualStyleBackColor = true;
@@ -231,9 +232,9 @@
             // 
             // nextbutton
             // 
-            this.nextbutton.Location = new System.Drawing.Point(0, 277);
+            this.nextbutton.Location = new System.Drawing.Point(0, 292);
             this.nextbutton.Name = "nextbutton";
-            this.nextbutton.Size = new System.Drawing.Size(32, 35);
+            this.nextbutton.Size = new System.Drawing.Size(84, 29);
             this.nextbutton.TabIndex = 36;
             this.nextbutton.Text = "Next Song";
             this.nextbutton.UseVisualStyleBackColor = true;
@@ -241,9 +242,9 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(0, 318);
+            this.button6.Location = new System.Drawing.Point(0, 327);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(26, 29);
+            this.button6.Size = new System.Drawing.Size(84, 29);
             this.button6.TabIndex = 35;
             this.button6.Text = "Create Playlist";
             this.button6.UseVisualStyleBackColor = true;
@@ -252,7 +253,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(243, 129);
+            this.label4.Location = new System.Drawing.Point(256, 111);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 21);
             this.label4.TabIndex = 31;
@@ -262,7 +263,7 @@
             // 
             this.nowplaying.AutoSize = true;
             this.nowplaying.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.nowplaying.Location = new System.Drawing.Point(361, 129);
+            this.nowplaying.Location = new System.Drawing.Point(254, 136);
             this.nowplaying.Name = "nowplaying";
             this.nowplaying.Size = new System.Drawing.Size(109, 32);
             this.nowplaying.TabIndex = 32;
@@ -277,7 +278,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(363, 161);
+            this.label5.Location = new System.Drawing.Point(256, 168);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(145, 21);
             this.label5.TabIndex = 33;
