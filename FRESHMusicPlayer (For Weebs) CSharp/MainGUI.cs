@@ -23,7 +23,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
             
             InitializeComponent();
             if (Properties.Settings.Default.WaifuChanged) pictureBox1.Image = Image.FromFile(Properties.Settings.Default.Waifu);
-            Text = "FRESHMusicPlayer (For Weebs) C# Edition";
+            Text = "FRESHMusicPlayer (For Weebs)";
             if (Properties.Settings.Default.Image == false)
             {
                 pictureBox1.Visible = false;
@@ -59,7 +59,7 @@ namespace FRESHMusicPlayer__For_Weebs__CSharp
                     position = 0;
                     label5.Text = "(nothing playing)";
                     moreinfo.Visible = false;
-                    Text = "FRESHMusicPlayer (For Weebs) C# Edition";
+                    Text = "FRESHMusicPlayer (For Weebs)";
                     
                     if (playlistmode)
                     {
